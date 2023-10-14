@@ -2,16 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Developer Detail</title>
+    <title>Commit List</title>
 </head>
 <body>
-<h1>Developer Detail</h1>
-<div>
-    <h2>Username: <span th:text="${developer.username}"></span></h2>
-    <h2>Email: <span th:text="${developer.email}"></span></h2>
-</div>
-
-<h2>Commit List:</h2>
+<h1>Commit List</h1>
 <table>
     <thead>
     <tr>
@@ -21,7 +15,8 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="commit : ${developer.commits}">
+    <!-- Iterate over the list of commits and display each commit -->
+    <tr th:each="commit : ${commitList}">
         <td th:text="${commit.hash}"></td>
         <td th:text="${commit.timestamp}"></td>
         <td th:text="${commit.author}"></td>
